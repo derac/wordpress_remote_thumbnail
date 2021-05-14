@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Remote Thumbnail -  edit 5.7
+Plugin Name: Remote Thumbnail - theblast edit 5.7
 Description: Lightweight plugin to use remote images for post thumbnails and featured image. Enter remote image url into custom field 'remote_thumbnail' of any post.
 Version: 1.2
 Author: Samuel Diethelm - Derek Olson
@@ -11,7 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 class remote_thumbnail_plugin{
     public static function thumbnail_html($html, $post_ID, $post_image_id, $size, $attr){
         $src = get_post_meta($post_ID,'remote_thumbnail',true);
-        if (!$src) { return $html }
+        if (!$src) {
+			return $html;
+		}
         return '<img id="post-thumbnail" src="'.$src.'">';
     }
 
